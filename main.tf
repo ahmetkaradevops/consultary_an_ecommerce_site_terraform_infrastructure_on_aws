@@ -24,14 +24,15 @@ resource "local_file" "ssh_key" {
   content  = tls_private_key.key_pair.private_key_pem
 }
 
-# resource "aws_instance" "eva" {
-#   ami           = var.ami_uk
-#   instance_type = var.instance_type1
-#   key_name      = aws_key_pair.horadart.key_name
-#   tags = {
-#     "Name" = "EVA"
-#   }
-# }
+resource "aws_instance" "eva" {
+  ami             = var.ami_uk
+  instance_type   = var.instance_type1
+  key_name        = aws_key_pair.key_pair.key_name
+  security_groups = [aws_security_group.rdp.name]
+  tags = {
+    "Name" = "Eva"
+  }
+}
 
 resource "aws_instance" "elleven" {
   ami             = var.ami_uk

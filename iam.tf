@@ -35,6 +35,16 @@ data "archive_file" "zip_the_python_code_stop_elleven" {
   source_dir  = "${path.module}/python/"
   output_path = "${path.module}/python/stop_instances_elleven.zip"
 }
+data "archive_file" "zip_the_python_code_start_eva" {
+  type        = "zip"
+  source_dir  = "${path.module}/python/"
+  output_path = "${path.module}/python/start_instances_eva.zip"
+}
+data "archive_file" "zip_the_python_code_stop_eva" {
+  type        = "zip"
+  source_dir  = "${path.module}/python/"
+  output_path = "${path.module}/python/stop_instances_eva.zip"
+}
 data "archive_file" "zip_the_python_code_start_arya" {
   type        = "zip"
   source_dir  = "${path.module}/python/"

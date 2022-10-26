@@ -7,14 +7,14 @@ resource "aws_eip_association" "arya" {
   allocation_id = aws_eip.arya.id
 }
 
-# resource "aws_eip" "eva" {
-#   vpc = true
-# }
+resource "aws_eip" "eva" {
+  vpc = true
+ }
 
-# resource "aws_eip_association" "eva" {
-#   instance_id   = aws_instance.eva.id
-#   allocation_id = aws_eip.eva.id
-# }
+resource "aws_eip_association" "eva" {
+  instance_id   = aws_instance.eva.id
+  allocation_id = aws_eip.eva.id
+}
 
 resource "aws_eip" "elleven" {
   vpc = true
